@@ -3,14 +3,26 @@ package ex3;
 /** Représente une ferme de reptile
  * @author DIGINAMIC
  */
+
 public class FermeReptile extends Zone {
 
-	/** Masse moyenne en kg de nourriture consommée par 1 reptile */
-	private static final double MASSE_NOURRITURE = 0.1;
-
+	
+	/**Retourne le poids consommé par un animal*/
 	@Override
 	public double getPoids() {
-		return MASSE_NOURRITURE;
+		return 0.1;
 	}
+
+	/** Regarde si un animal est ajoutable dans la zone selon des criteres */
+	@Override
+	public boolean ajoutable(Animal unAnimal) {
+		
+		if(unAnimal.getType().equals(Type.REPTILE)){
+			return true;
+		}
+		return false;
+	}
+	
+	
 
 }
